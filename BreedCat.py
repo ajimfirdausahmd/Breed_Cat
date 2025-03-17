@@ -50,16 +50,20 @@ def load_model(filepath):
     return model
 
 # Load the model
-model = load_model('model.keras')
+model = load_model('model/model.keras')
 
 # Main function
 def main():
-    st.title("Computer Vision + LLM 🤖")
+    st.title("Breed Cat😼")
     st.write("🢀 Please capture an image first before you start asking questions.")
+
+    # ✅ Initialize session state for messages
+    if "messages" not in st.session_state:
+        st.session_state.messages = []
 
     # Sidebar for file uploader
     with st.sidebar:
-        st.header("Upload Image")
+        st.header("Upload Image Cat")
         image = st.file_uploader("Upload an image (JPG, PNG)", type=["jpg", "jpeg", "png"])
 
         if image is not None:
@@ -78,55 +82,53 @@ def main():
             predicted_class = class_names[predict]
             st.sidebar.success(f"**Predicted Class:** {predicted_class}")
 
-            # Avoid adding duplicate user message
-            if "messages" not in st.session_state:
-                st.session_state.messages = []
+            # ✅ Check if the class info was already added to avoid duplicates
+            if not any(msg["content"] == f"What is {predicted_class}?" for msg in st.session_state.messages):
+                # Save predicted class as a user message
+                st.session_state.messages.append({
+                    "role": "user",
+                    "content": f"What is {predicted_class}?",
+                    "avatar": "☠️"
+                })
 
-            # Automatically query the assistant about the predicted class without repeating it as a user message
-            with st.chat_message("assistant", avatar="🤖"):
-                message_placeholder = st.empty()
-                with st.spinner(f"Analyzing {predicted_class}..."):
-                    assistant_response = extract_message(run_flow(f"What is {predicted_class}?", tweaks=TWEAKS))
-                    message_placeholder.write(assistant_response)
+                # Get assistant response and save it
+                assistant_response = extract_message(run_flow(f"What is {predicted_class}?", tweaks=TWEAKS))
+                st.session_state.messages.append({
+                    "role": "assistant",
+                    "content": assistant_response,
+                    "avatar": "🕵🏽‍♂️"
+                })
 
-            # Save the assistant's response in session state
-            st.session_state.messages.append({
-                "role": "assistant",
-                "content": assistant_response,
-                "avatar": "🤖"
-            })
+    # ✅ Display all previous messages (including prediction and questions)
+    for message in st.session_state.messages:
+        with st.chat_message(message["role"], avatar=message["avatar"]):
+            st.write(message["content"])
 
-    # Display all previous messages with avatars
-    if "messages" in st.session_state:
-        for message in st.session_state.messages:
-            with st.chat_message(message["role"], avatar=message["avatar"]):
-                st.write(message["content"])
-
-    # Chat input for user query
+    # ✅ Chat input for user query
     if query := st.chat_input("Ask me anything"):
-        # Display user message in chat
+        # Display user message
         with st.chat_message("user", avatar="☠️"):
             st.write(query)
 
-        # Save user message to session state
+        # Save user message
         st.session_state.messages.append({
             "role": "user",
             "content": query,
             "avatar": "☠️"
         })
 
-        # Get assistant's response
-        with st.chat_message("assistant", avatar="🤖"):
+        # Get assistant response
+        with st.chat_message("assistant", avatar="🕵🏽‍♂️"):
             message_placeholder = st.empty()
             with st.spinner("Thinking..."):
                 assistant_response = extract_message(run_flow(query, tweaks=TWEAKS))
                 message_placeholder.write(assistant_response)
 
-        # Save assistant's response to session state
+        # Save assistant response
         st.session_state.messages.append({
             "role": "assistant",
             "content": assistant_response,
-            "avatar": "🤖"
+            "avatar": "🕵🏽‍♂️"
         })
 
 if __name__ == "__main__":
