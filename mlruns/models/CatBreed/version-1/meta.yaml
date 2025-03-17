@@ -1,0 +1,14 @@
+aliases: []
+creation_timestamp: 1741965262449
+current_stage: None
+description: ''
+last_updated_timestamp: 1741965262449
+name: CatBreed
+run_id: 162b5288d6f649fe841a6071fe422c72
+run_link: ''
+source: file:///d:/MAFA/Capstone_Project/mlruns/398812858354036590/162b5288d6f649fe841a6071fe422c72/artifacts/model
+status: READY
+status_message: null
+storage_location: file:///d:/MAFA/Capstone_Project/mlruns/398812858354036590/162b5288d6f649fe841a6071fe422c72/artifacts/model
+user_id: null
+version: 1

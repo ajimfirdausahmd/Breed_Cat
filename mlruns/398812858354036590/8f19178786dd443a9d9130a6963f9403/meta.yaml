@@ -1,0 +1,15 @@
+artifact_uri: file:///d:/MAFA/Capstone_Project/mlruns/398812858354036590/8f19178786dd443a9d9130a6963f9403/artifacts
+end_time: 1742022129762
+entry_point_name: ''
+experiment_id: '398812858354036590'
+lifecycle_stage: active
+run_id: 8f19178786dd443a9d9130a6963f9403
+run_name: righteous-robin-80
+run_uuid: 8f19178786dd443a9d9130a6963f9403
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1742021367656
+status: 3
+tags: []
+user_id: User

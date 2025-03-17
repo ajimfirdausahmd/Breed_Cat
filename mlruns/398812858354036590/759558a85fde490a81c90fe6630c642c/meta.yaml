@@ -1,0 +1,15 @@
+artifact_uri: file:///d:/MAFA/Capstone_Project/mlruns/398812858354036590/759558a85fde490a81c90fe6630c642c/artifacts
+end_time: 1741963399719
+entry_point_name: ''
+experiment_id: '398812858354036590'
+lifecycle_stage: active
+run_id: 759558a85fde490a81c90fe6630c642c
+run_name: gifted-dolphin-196
+run_uuid: 759558a85fde490a81c90fe6630c642c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1741963399694
+status: 4
+tags: []
+user_id: User

@@ -1,0 +1,15 @@
+artifact_uri: file:///d:/MAFA/Capstone_Project/mlruns/398812858354036590/bdc5468b6f944b1186dfb56766959527/artifacts
+end_time: 1741963353789
+entry_point_name: ''
+experiment_id: '398812858354036590'
+lifecycle_stage: active
+run_id: bdc5468b6f944b1186dfb56766959527
+run_name: luxuriant-newt-695
+run_uuid: bdc5468b6f944b1186dfb56766959527
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1741963353763
+status: 3
+tags: []
+user_id: User

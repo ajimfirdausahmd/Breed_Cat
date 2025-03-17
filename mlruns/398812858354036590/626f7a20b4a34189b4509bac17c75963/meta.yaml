@@ -1,0 +1,15 @@
+artifact_uri: file:///d:/MAFA/Capstone_Project/mlruns/398812858354036590/626f7a20b4a34189b4509bac17c75963/artifacts
+end_time: 1741964161417
+entry_point_name: ''
+experiment_id: '398812858354036590'
+lifecycle_stage: active
+run_id: 626f7a20b4a34189b4509bac17c75963
+run_name: resilient-moth-446
+run_uuid: 626f7a20b4a34189b4509bac17c75963
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1741964133853
+status: 4
+tags: []
+user_id: User
