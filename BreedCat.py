@@ -5,6 +5,8 @@ import numpy as np
 import cv2
 from typing import Optional
 from PIL import Image
+from streamlit_lottie import st_lottie
+import json
 
 # Constants
 BASE_API_URL = "http://127.0.0.1:7860"
@@ -18,6 +20,11 @@ TWEAKS = {
     "Memory-YpgfI": {},
     "TextInput-y6BdN": {}
 }
+
+# Load Lottie animation
+def load_lottie(filepath):
+    with open(filepath, "r") as f:
+        return json.load(f)
 
 # Function to run the flow
 def run_flow(message: str, tweaks: Optional[dict] = None) -> dict:
@@ -53,9 +60,20 @@ def load_model(filepath):
 model = load_model('model/model.keras')
 
 # Main function
-def main():
-    st.title("Breed Cat😼")
+# Load animation file
+lottie_cat = load_lottie("Animations/Animation - 1742280933412.json")
+
+# Create columns for title and animation
+col1, col2 = st.columns([0.7, 0.3])
+
+with col1:
+    st.title("🐈 **Breed Cat Prediction**")
     st.write("🢀 Please capture an image first before you start asking questions.")
+
+with col2:
+    st_lottie(lottie_cat, height=100, width=100, key="cat")
+
+def main():
 
     # ✅ Initialize session state for messages
     if "messages" not in st.session_state:
@@ -63,7 +81,7 @@ def main():
 
     # Sidebar for file uploader
     with st.sidebar:
-        st.header("Upload Image Cat")
+        st.header("💡Upload Image Cat")
         image = st.file_uploader("Upload an image (JPG, PNG)", type=["jpg", "jpeg", "png"])
 
         if image is not None:
