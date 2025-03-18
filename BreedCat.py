@@ -8,6 +8,12 @@ from PIL import Image
 from streamlit_lottie import st_lottie
 import json
 
+st.set_page_config(
+    page_title="Cat Breed Prediction",
+    page_icon="🐾",
+    layout="wide"
+)
+
 # Constants
 BASE_API_URL = "http://127.0.0.1:7860"
 FLOW_ID = "03bd03f8-8200-4eec-9081-6f8ba2391f3b"
@@ -60,13 +66,6 @@ def load_model(filepath):
 # Load model and animation
 model = load_model('model/model.keras')
 lottie_cat = load_lottie("Animations/Animation - 1742280933412.json")
-
-# App Styling
-st.set_page_config(
-    page_title="Cat Breed Prediction",
-    page_icon="🐾",
-    layout="wide"
-)
 
 # Main title and animation
 with st.container():
