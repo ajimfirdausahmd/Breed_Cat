@@ -45,7 +45,7 @@ def run_flow(message: str, tweaks: Optional[dict] = None) -> dict:
     if tweaks:
         payload["tweaks"] = tweaks
 
-    response = requests.post(api_url, json=payload)
+    response = requests.post(api_url, json=payload,verify=True)
     return response.json()
 
 # Function to extract the assistant's message from the response
