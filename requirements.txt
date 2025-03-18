@@ -1,3 +1,4 @@
+langflow
 streamlit
 requests
 numpy
