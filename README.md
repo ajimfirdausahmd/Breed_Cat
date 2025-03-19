@@ -45,5 +45,13 @@ This project combines Computer Vision and Generative AI to create an application
 
 ## Results and Performance
 
+1. Accurancy
+
+![Accurancy]('Img/Accuracy.JPG')
+
+2. Loss
+
+![Loss](Img/Loss.JPG)
+
 ## License
 This project is licensed under the **MIT License**.
