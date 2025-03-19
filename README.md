@@ -40,7 +40,7 @@ This project combines Computer Vision and Generative AI to create an application
 
 ## Langflow Integration
 
-<img src='Img/langflow.JPG' alt='Accuracy' width='30%'>
+<img src='Img/langflow.JPG' alt='Accuracy' width='70%'>
 
 * Langflow is used to build the Generative AI chatbot.  
 * The chatbot takes the predicted breed and generates informative text responses.  
@@ -50,11 +50,11 @@ This project combines Computer Vision and Generative AI to create an application
 
 1. Accurancy
 
-<img src='Img/Accuracy.JPG' alt='Accuracy' width='30%'>
+<img src='Img/Accuracy.JPG' alt='Accuracy' width='70%'>
 
 2. Loss
 
-<img src='Img/Loss.JPG' alt='Accuracy' width='30%'>
+<img src='Img/Loss.JPG' alt='Accuracy' width='70%'>
 
 ## License
 This project is licensed under the **MIT License**.
