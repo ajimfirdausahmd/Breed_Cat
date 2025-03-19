@@ -47,7 +47,7 @@ This project combines Computer Vision and Generative AI to create an application
 
 1. Accurancy
 
-![Accurancy]('Img/Accuracy.JPG')
+![Accurancy](Img/Accuracy.JPG)
 
 2. Loss
 
