@@ -15,7 +15,7 @@ st.set_page_config(
 )
 
 # Constants
-BASE_API_URL = "http://127.0.0.1:7860"
+BASE_API_URL = "https://e213-175-139-159-165.ngrok-free.app"
 FLOW_ID = "03bd03f8-8200-4eec-9081-6f8ba2391f3b"
 ENDPOINT = ""
 TWEAKS = {
